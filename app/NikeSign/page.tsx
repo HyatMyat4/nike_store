@@ -90,7 +90,7 @@ export default function page() {
 
       const storageRef = ref(
         storage,
-        `${uuidv4()}` + convertedUrlToFile.type.slice(6)
+        `${uuidv4()}.` + convertedUrlToFile.type.slice(6)
       );
       // @ts-ignore
       const metadata = { contentType: convertedUrlToFile.type };
@@ -157,6 +157,8 @@ export default function page() {
       setRoleCode("");
       setIMAGE("");
       setreadAsDataURL("");
+    } else {
+      toast.error("Soorty Register Failed. Please try again");
     }
   };
 

@@ -29,10 +29,8 @@ export default function Navbar() {
     }
   };
 
-  useEffect(() => {
-    if (!authData) {
-      addUser_data();
-    }
+  useEffect(() => {   
+      addUser_data();    
     const Token_data = localStorage.getItem("Token") as any;
     if (!Token_data) return;
     const data: User_data = jwt_decode(Token_data);
